@@ -5,14 +5,12 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.Button
-import android.widget.EditText
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.upc.pe.jobagapplication.Adapter.InterviewEmpleadorAdapter
-import com.upc.pe.jobagapplication.Model.Interview
-import com.upc.pe.jobagapplication.Service.InterviewService
+import com.upc.pe.jobagapplication.Adapter.JobOfferEntrevistaPendienteAdapter
+import com.upc.pe.jobagapplication.Model.JobOffer
+import com.upc.pe.jobagapplication.Service.JobOfferService
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -20,8 +18,8 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 class EntrevistasPendientesEmpleadorActivity : AppCompatActivity() {
-    lateinit var  interviews: List<Interview>
-    lateinit var interviewAdapter: InterviewEmpleadorAdapter
+    lateinit var jobOffers: List<JobOffer>
+    lateinit var jobOfferAdapter: JobOfferEntrevistaPendienteAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,20 +37,20 @@ class EntrevistasPendientesEmpleadorActivity : AppCompatActivity() {
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
-        val service: InterviewService = retrofit.create(InterviewService::class.java)
+        val service: JobOfferService = retrofit.create(JobOfferService::class.java)
 
         //val request = service.AllInterview()
-        val request = service.AllInterview(1)
+        val request = service.AllJobOffer(1)
 
-        request.enqueue(object : Callback<List<Interview>> {
-            override fun onResponse(call: Call<List<Interview>>, response: Response<List<Interview>>) {
-                interviews = response.body()!!
-                interviewAdapter = InterviewEmpleadorAdapter(interviews)
-                rvEntrevistasPendientes.adapter = interviewAdapter
+        request.enqueue(object : Callback<List<JobOffer>> {
+            override fun onResponse(call: Call<List<JobOffer>>, response: Response<List<JobOffer>>) {
+                jobOffers = response.body()!!
+                jobOfferAdapter = JobOfferEntrevistaPendienteAdapter(jobOffers)
+                rvEntrevistasPendientes.adapter = jobOfferAdapter
                 rvEntrevistasPendientes.layoutManager = LinearLayoutManager(this@EntrevistasPendientesEmpleadorActivity)
             }
 
-            override fun onFailure(call: Call<List<Interview>>, t: Throwable) {
+            override fun onFailure(call: Call<List<JobOffer>>, t: Throwable) {
                 Toast.makeText(this@EntrevistasPendientesEmpleadorActivity, "No se pudo conectar, Intente de nuevo porfavor", Toast.LENGTH_LONG).show()
             }
         })

@@ -20,4 +20,5 @@
     <string name="anuncios_empleador_menu">Mis Anuncios</string>
     <string name="crear_entrevistas_empleador_menu">Crear Entrevistas</string>
     <string name="entrevistas_pendientes_empleador_menu">Entrevistas Pendientes</string>
+    <string name="Link_Entrevista">https://meet.google.com/end-drxc-prn</string>
 </resources>
