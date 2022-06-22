@@ -74,6 +74,12 @@ class EntrevistasPendientesEmpleadorActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        if (id == R.id.Cerrar_Sesion){
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+            Toast.makeText(this, "Se cerro la sesion correctamente", Toast.LENGTH_LONG).show()
+        }
+
         return super.onOptionsItemSelected(item)
     }
 }

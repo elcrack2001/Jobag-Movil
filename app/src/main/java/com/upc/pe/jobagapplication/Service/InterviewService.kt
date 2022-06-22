@@ -7,7 +7,6 @@ import retrofit2.http.Path
 import retrofit2.http.Query
 
 interface InterviewService {
-
     @GET("interviews/")
     fun AllInterview(@Query("id") id: Int): Call<List<Interview>>
 }
