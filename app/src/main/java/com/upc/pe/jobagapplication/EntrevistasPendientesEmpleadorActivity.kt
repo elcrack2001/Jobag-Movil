@@ -25,10 +25,10 @@ class EntrevistasPendientesEmpleadorActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_entrevistas_pendientes_empleador)
 
-        ListInterview()
+        ListOfertasPublicadas()
     }
 
-    private fun ListInterview() {
+    private fun ListOfertasPublicadas() {
         val rvEntrevistasPendientes = findViewById<RecyclerView>(R.id.rvListEntrevistaPendienteEmpleador)
 
         //URL del API

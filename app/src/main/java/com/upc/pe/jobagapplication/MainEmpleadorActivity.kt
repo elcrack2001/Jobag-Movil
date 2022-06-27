@@ -9,7 +9,7 @@ import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.upc.pe.jobagapplication.Adapter.JobOfferAnunciosEmpleadorAdapter
-import com.upc.pe.jobagapplication.Adapter.JobOfferEntrevistaPendienteAdapter
+import com.upc.pe.jobagapplication.Adapter.OnItemClickListener
 import com.upc.pe.jobagapplication.Model.JobOffer
 import com.upc.pe.jobagapplication.Service.JobOfferService
 import retrofit2.Call
@@ -18,9 +18,10 @@ import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-class MainEmpleadorActivity : AppCompatActivity() {
+class MainEmpleadorActivity : AppCompatActivity(), OnItemClickListener {
     lateinit var jobOffers: List<JobOffer>
     lateinit var jobOfferAdapter: JobOfferAnunciosEmpleadorAdapter
+    val EmpleadorId: Int = 1;
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,12 +41,12 @@ class MainEmpleadorActivity : AppCompatActivity() {
 
         val service: JobOfferService = retrofit.create(JobOfferService::class.java)
 
-        val request = service.AllJobOffer(1)
+        val request = service.AllJobOffer(EmpleadorId)
 
         request.enqueue(object : Callback<List<JobOffer>> {
             override fun onResponse(call: Call<List<JobOffer>>, response: Response<List<JobOffer>>) {
                 jobOffers = response.body()!!
-                jobOfferAdapter = JobOfferAnunciosEmpleadorAdapter(jobOffers)
+                jobOfferAdapter = JobOfferAnunciosEmpleadorAdapter(jobOffers, this@MainEmpleadorActivity)
                 rvMainEmpleadorAnuncios.adapter = jobOfferAdapter
                 rvMainEmpleadorAnuncios.layoutManager = LinearLayoutManager(this@MainEmpleadorActivity)
             }
@@ -81,5 +82,16 @@ class MainEmpleadorActivity : AppCompatActivity() {
         }
 
         return super.onOptionsItemSelected(item)
+    }
+
+    override fun OnItemClick(position: Int) {
+        val clickedItem = jobOffers[position]
+        val jobOfferId = position + 1
+        jobOfferAdapter.notifyItemChanged(position)
+
+        val intent = Intent(this, OfertaByEmpleadoID::class.java)
+        intent.putExtra("jobOfferId", jobOfferId)
+        startActivity(intent)
+
     }
 }

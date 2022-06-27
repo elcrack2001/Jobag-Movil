@@ -21,4 +21,10 @@
     <string name="crear_entrevistas_empleador_menu">Crear Entrevistas</string>
     <string name="entrevistas_pendientes_empleador_menu">Entrevistas Pendientes</string>
     <string name="Link_Entrevista">https://meet.google.com/end-drxc-prn</string>
+    <string name="oferta_laboral">Oferta Laboral</string>
+    <string name="descripcion">Descripcion</string>
+    <string name="fecha_publicacion">Fecha de Publicacion</string>
+    <string name="fecha_final">Fecha Final</string>
+    <string name="salario">Salario</string>
+    <string name="direccion">Direccion</string>
 </resources>

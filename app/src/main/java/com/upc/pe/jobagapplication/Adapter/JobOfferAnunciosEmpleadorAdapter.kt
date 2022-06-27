@@ -4,11 +4,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.upc.pe.jobagapplication.Model.JobOffer
 import com.upc.pe.jobagapplication.R
 
-class JobOfferAnunciosEmpleadorAdapter (val joboffers: List<JobOffer>): RecyclerView.Adapter<JobOfferEmpleadorAnuncioPrototype>() {
+class JobOfferAnunciosEmpleadorAdapter (
+    val joboffers: List<JobOffer>,
+    val listener: OnItemClickListener
+    ): RecyclerView.Adapter<JobOfferAnunciosEmpleadorAdapter.JobOfferEmpleadorAnuncioPrototype>() {
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): JobOfferEmpleadorAnuncioPrototype {
         val view = LayoutInflater
             .from(parent.context)
@@ -17,23 +22,37 @@ class JobOfferAnunciosEmpleadorAdapter (val joboffers: List<JobOffer>): Recycler
     }
 
     override fun onBindViewHolder(holder: JobOfferEmpleadorAnuncioPrototype, position: Int) {
-        holder.bind(joboffers[position])
+        val addItem = joboffers[position]
+
+        holder.tvTittleAnuncioEmpleador.text = addItem.title
+        holder.tvDirectionAnuncioEmpleador.text = addItem.direction
+        holder.tvSueldoAnuncioEmpleador.text = addItem.salary.toString()
     }
 
     override fun getItemCount(): Int {
         return joboffers.size
     }
 
+    inner class JobOfferEmpleadorAnuncioPrototype(itemView: View) : RecyclerView.ViewHolder(itemView),
+        View.OnClickListener{
+        val tvTittleAnuncioEmpleador = itemView.findViewById<TextView>(R.id.tvTittleAnuncioEmpleador)
+        val tvDirectionAnuncioEmpleador = itemView.findViewById<TextView>(R.id.tvDirectionAnuncioEmpleador)
+        val tvSueldoAnuncioEmpleador = itemView.findViewById<TextView>(R.id.tvSueldoAnuncioEmpleador)
+
+        init {
+            itemView.setOnClickListener(this)
+        }
+
+        //Ctrl + I
+        override fun onClick(p0: View?) {
+            val position = adapterPosition
+            if (position != RecyclerView.NO_POSITION){
+                listener.OnItemClick(position)
+            }
+        }
+    }
 }
 
-class JobOfferEmpleadorAnuncioPrototype(itemView: View) : RecyclerView.ViewHolder(itemView){
-    val tvTittleAnuncioEmpleador = itemView.findViewById<TextView>(R.id.tvTittleAnuncioEmpleador)
-    val tvDirectionAnuncioEmpleador = itemView.findViewById<TextView>(R.id.tvDirectionAnuncioEmpleador)
-    val tvSueldoAnuncioEmpleador = itemView.findViewById<TextView>(R.id.tvSueldoAnuncioEmpleador)
-
-    fun bind(JobOffer: JobOffer){
-        tvTittleAnuncioEmpleador.text = JobOffer.title
-        tvDirectionAnuncioEmpleador.text = JobOffer.direction
-        tvSueldoAnuncioEmpleador.text = JobOffer.salary.toString()
-    }
+interface OnItemClickListener{
+    fun OnItemClick(position: Int)
 }

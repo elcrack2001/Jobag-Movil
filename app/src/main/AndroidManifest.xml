@@ -17,8 +17,13 @@
         android:theme="@style/Theme.JoBagApplication"
         tools:targetApi="31">
         <activity
-            android:name=".EntrevistasPendientesEmpleadorActivity"
+            android:name=".OfertaByEmpleadoID"
+            android:parentActivityName=".MainEmpleadorActivity"
             android:exported="false" />
+        <activity
+            android:name=".EntrevistasPendientesEmpleadorActivity"
+            android:exported="false"
+            android:parentActivityName=".MainEmpleadorActivity" />
         <activity
             android:name=".MainEmpleadorActivity"
             android:exported="false" />
