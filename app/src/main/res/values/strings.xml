@@ -33,4 +33,6 @@
     <string name="n_telefonico">N° Telefonico</string>
     <string name="n_documento">N° Documento</string>
     <string name="posicion">Posicion</string>
+    <string name="crear_anuncio">Crear Anuncio</string>
+    <string name="entrevistas_programadas">Entrevistas Programadas</string>
 </resources>

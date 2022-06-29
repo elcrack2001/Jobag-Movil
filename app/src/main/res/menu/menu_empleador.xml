@@ -12,12 +12,12 @@
         android:title="@string/anuncios_empleador_menu"/>
 
     <item
-        android:id="@+id/Entrevistas_Empleador_Pendientes"
-        android:title="@string/entrevistas_pendientes_empleador_menu"/>
+        android:id="@+id/Anuncios_Empleador_Crear"
+        android:title="@string/crear_anuncio"/>
 
     <item
-        android:id="@+id/Entrevistas_Empleador_Crear"
-        android:title="@string/crear_entrevistas_empleador_menu"/>
+        android:id="@+id/Entrevistas_Empleador_Pendientes"
+        android:title="@string/entrevistas_programadas"/>
 
     <item
         android:id="@+id/Cuenta_Empleador"

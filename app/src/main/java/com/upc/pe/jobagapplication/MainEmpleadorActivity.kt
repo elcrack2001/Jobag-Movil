@@ -22,7 +22,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 class MainEmpleadorActivity : AppCompatActivity(), OnItemClickListener {
     lateinit var jobOffers: List<JobOffer>
     lateinit var jobOfferAdapter: JobOfferAnunciosEmpleadorAdapter
-    val EmpleadorId: Int = 1;
+    val EmpleadorId: Int = 4;
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

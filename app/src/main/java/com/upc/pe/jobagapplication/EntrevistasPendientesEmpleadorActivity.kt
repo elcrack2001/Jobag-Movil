@@ -3,7 +3,6 @@ package com.upc.pe.jobagapplication
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
@@ -27,7 +26,6 @@ class EntrevistasPendientesEmpleadorActivity : AppCompatActivity() {
         setContentView(R.layout.activity_entrevistas_pendientes_empleador)
 
         val EmpleadorId = getIntent().getIntExtra("EmpleadorId", 0);
-        Log.d("url", EmpleadorId.toString())
         ListOfertasPublicadas(EmpleadorId)
     }
 
@@ -43,8 +41,6 @@ class EntrevistasPendientesEmpleadorActivity : AppCompatActivity() {
         val service: JobOfferService = retrofit.create(JobOfferService::class.java)
 
         val request = service.AllJobOffer(EmpleadorId)
-        Log.d("url", EmpleadorId.toString())
-
 
         request.enqueue(object : Callback<List<JobOffer>> {
             override fun onResponse(call: Call<List<JobOffer>>, response: Response<List<JobOffer>>) {

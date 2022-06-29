@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="46dp"
-        android:text="ENTREVISTAS PENDIENTES"
+        android:text="@string/entrevistas_programadas"
         android:textAlignment="center"
         android:textColor="#0E36FF"
         android:textSize="24sp"
