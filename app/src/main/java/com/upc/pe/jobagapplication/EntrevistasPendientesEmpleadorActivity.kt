@@ -3,6 +3,7 @@ package com.upc.pe.jobagapplication
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
@@ -25,10 +26,12 @@ class EntrevistasPendientesEmpleadorActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_entrevistas_pendientes_empleador)
 
-        ListOfertasPublicadas()
+        val EmpleadorId = getIntent().getIntExtra("EmpleadorId", 0);
+        Log.d("url", EmpleadorId.toString())
+        ListOfertasPublicadas(EmpleadorId)
     }
 
-    private fun ListOfertasPublicadas() {
+    private fun ListOfertasPublicadas(EmpleadorId: Int) {
         val rvEntrevistasPendientes = findViewById<RecyclerView>(R.id.rvListEntrevistaPendienteEmpleador)
 
         //URL del API
@@ -39,13 +42,14 @@ class EntrevistasPendientesEmpleadorActivity : AppCompatActivity() {
 
         val service: JobOfferService = retrofit.create(JobOfferService::class.java)
 
-        //val request = service.AllInterview()
-        val request = service.AllJobOffer(1)
+        val request = service.AllJobOffer(EmpleadorId)
+        Log.d("url", EmpleadorId.toString())
+
 
         request.enqueue(object : Callback<List<JobOffer>> {
             override fun onResponse(call: Call<List<JobOffer>>, response: Response<List<JobOffer>>) {
                 jobOffers = response.body()!!
-                jobOfferAdapter = JobOfferEntrevistaPendienteAdapter(jobOffers)
+                jobOfferAdapter = JobOfferEntrevistaPendienteAdapter(jobOffers, EmpleadorId)
                 rvEntrevistasPendientes.adapter = jobOfferAdapter
                 rvEntrevistasPendientes.layoutManager = LinearLayoutManager(this@EntrevistasPendientesEmpleadorActivity)
             }
@@ -63,9 +67,11 @@ class EntrevistasPendientesEmpleadorActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         val id = item.getItemId()
+        val EmpleadorId = getIntent().getIntExtra("EmpleadorId", 0);
 
         if (id == R.id.Entrevistas_Empleador_Pendientes){
             val intent = Intent(this, EntrevistasPendientesEmpleadorActivity::class.java)
+            intent.putExtra("EmpleadorId", EmpleadorId)
             startActivity(intent)
         }
 
@@ -78,6 +84,13 @@ class EntrevistasPendientesEmpleadorActivity : AppCompatActivity() {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
             Toast.makeText(this, "Se cerro la sesion correctamente", Toast.LENGTH_LONG).show()
+        }
+
+        if (id == R.id.Perfil_Empleador){
+            val intent = Intent(this, PerfilEmpleadorActivity::class.java)
+            //Pasar el id del empleador al activity
+            intent.putExtra("EmpleadorId", EmpleadorId)
+            startActivity(intent)
         }
 
         return super.onOptionsItemSelected(item)

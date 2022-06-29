@@ -27,4 +27,10 @@
     <string name="fecha_final">Fecha Final</string>
     <string name="salario">Salario</string>
     <string name="direccion">Direccion</string>
+    <string name="perfil_empleador">PERFIL EMPLEADOR</string>
+    <string name="nombres_apellidos">Nombres y Apellidos</string>
+    <string name="email">Email</string>
+    <string name="n_telefonico">N° Telefonico</string>
+    <string name="n_documento">N° Documento</string>
+    <string name="posicion">Posicion</string>
 </resources>

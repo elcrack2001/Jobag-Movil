@@ -6,6 +6,14 @@ data class JobOffer (
     @SerializedName("id")
     val id: Int,
 
+    val employeer: employeers,
+
+    @SerializedName("type")
+    val type: String,
+
+    @SerializedName("title")
+    val title: String,
+
     @SerializedName("description")
     val description: String,
 
@@ -17,12 +25,6 @@ data class JobOffer (
 
     @SerializedName("salary")
     val salary: Int,
-
-    @SerializedName("type")
-    val type: String,
-
-    @SerializedName("title")
-    val title: String,
 
     @SerializedName("direction")
     val direction: String

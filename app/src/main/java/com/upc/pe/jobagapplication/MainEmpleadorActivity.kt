@@ -3,6 +3,7 @@ package com.upc.pe.jobagapplication
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
@@ -41,12 +42,13 @@ class MainEmpleadorActivity : AppCompatActivity(), OnItemClickListener {
 
         val service: JobOfferService = retrofit.create(JobOfferService::class.java)
 
-        val request = service.AllJobOffer(EmpleadorId)
+        val request = service.AllJobOffer(EmpleadorId);
 
         request.enqueue(object : Callback<List<JobOffer>> {
             override fun onResponse(call: Call<List<JobOffer>>, response: Response<List<JobOffer>>) {
                 jobOffers = response.body()!!
-                jobOfferAdapter = JobOfferAnunciosEmpleadorAdapter(jobOffers, this@MainEmpleadorActivity)
+                jobOfferAdapter = JobOfferAnunciosEmpleadorAdapter(jobOffers, this@MainEmpleadorActivity, EmpleadorId)
+                Log.d("url", jobOffers.toString())
                 rvMainEmpleadorAnuncios.adapter = jobOfferAdapter
                 rvMainEmpleadorAnuncios.layoutManager = LinearLayoutManager(this@MainEmpleadorActivity)
             }
@@ -67,6 +69,7 @@ class MainEmpleadorActivity : AppCompatActivity(), OnItemClickListener {
 
         if (id == R.id.Entrevistas_Empleador_Pendientes){
             val intent = Intent(this, EntrevistasPendientesEmpleadorActivity::class.java)
+            intent.putExtra("EmpleadorId", EmpleadorId)
             startActivity(intent)
         }
 
@@ -81,6 +84,13 @@ class MainEmpleadorActivity : AppCompatActivity(), OnItemClickListener {
             Toast.makeText(this, "Se cerro la sesion correctamente", Toast.LENGTH_LONG).show()
         }
 
+        if (id == R.id.Perfil_Empleador){
+            val intent = Intent(this, PerfilEmpleadorActivity::class.java)
+            //Pasar el id del empleador al activity
+            intent.putExtra("EmpleadorId", EmpleadorId)
+            startActivity(intent)
+        }
+
         return super.onOptionsItemSelected(item)
     }
 
@@ -91,6 +101,7 @@ class MainEmpleadorActivity : AppCompatActivity(), OnItemClickListener {
 
         val intent = Intent(this, OfertaByEmpleadoID::class.java)
         intent.putExtra("jobOfferId", jobOfferId)
+        intent.putExtra("EmpleadorId", EmpleadorId)
         startActivity(intent)
 
     }

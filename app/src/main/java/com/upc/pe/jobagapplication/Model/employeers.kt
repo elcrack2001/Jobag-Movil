@@ -3,27 +3,27 @@ package com.upc.pe.jobagapplication.Model
 import com.google.gson.annotations.SerializedName
 
 data class employeers (
-    @SerializedName("idEmployeer")
+    @SerializedName("id")
     val id : Int,
 
-    @SerializedName("firstnameEmployeer")
+    @SerializedName("firstname")
     val firstname: String,
 
-    @SerializedName("lastnameEmployeer")
+    @SerializedName("lastname")
     val lastname: String,
 
-    @SerializedName("emailEmployeer")
+    @SerializedName("email")
     val email: String,
 
-    @SerializedName("numberEmployeer")
+    @SerializedName("number")
     val number: Int,
 
-    @SerializedName("passwordEmployeer")
+    @SerializedName("password")
     val password: String,
 
-    @SerializedName("documentEmployeer")
+    @SerializedName("document")
     val document: String,
 
-    @SerializedName("posicionEmployeer")
+    @SerializedName("posicion")
     val posicion: String
         )

@@ -5,13 +5,15 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
+import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
 import com.upc.pe.jobagapplication.Model.JobOffer
 import com.upc.pe.jobagapplication.R
 
 class JobOfferAnunciosEmpleadorAdapter (
     val joboffers: List<JobOffer>,
-    val listener: OnItemClickListener
+    val listener: OnItemClickListener,
+    val EmployeerId: Int
     ): RecyclerView.Adapter<JobOfferAnunciosEmpleadorAdapter.JobOfferEmpleadorAnuncioPrototype>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): JobOfferEmpleadorAnuncioPrototype {
@@ -24,9 +26,13 @@ class JobOfferAnunciosEmpleadorAdapter (
     override fun onBindViewHolder(holder: JobOfferEmpleadorAnuncioPrototype, position: Int) {
         val addItem = joboffers[position]
 
-        holder.tvTittleAnuncioEmpleador.text = addItem.title
-        holder.tvDirectionAnuncioEmpleador.text = addItem.direction
-        holder.tvSueldoAnuncioEmpleador.text = addItem.salary.toString()
+        if (EmployeerId == addItem.employeer.id){
+            holder.tvTittleAnuncioEmpleador.text = addItem.title
+            holder.tvDirectionAnuncioEmpleador.text = addItem.direction
+            holder.tvSueldoAnuncioEmpleador.text = addItem.salary.toString()
+        } else{
+            holder.itemView.setVisibility(View.GONE)
+        }
     }
 
     override fun getItemCount(): Int {

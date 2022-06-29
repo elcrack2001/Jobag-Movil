@@ -3,65 +3,62 @@ package com.upc.pe.jobagapplication
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.TextView
 import android.widget.Toast
-import com.upc.pe.jobagapplication.Model.JobOffer
-import com.upc.pe.jobagapplication.Service.JobOfferService
+import com.upc.pe.jobagapplication.Model.employeers
+import com.upc.pe.jobagapplication.Service.EmployeerService
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-class OfertaByEmpleadoID : AppCompatActivity() {
-
-
+class PerfilEmpleadorActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_oferta_by_empleado_id)
+        setContentView(R.layout.activity_perfil_empleador)
 
         val EmpleadorId = getIntent().getIntExtra("EmpleadorId", 0);
         val jobOfferId = getIntent().getIntExtra("jobOfferId", 0);
 
-        JobOfferByEmployeerId(jobOfferId, EmpleadorId)
+        EmployeerById(EmpleadorId)
     }
 
-    private fun JobOfferByEmployeerId(jobOfferId: Int, EmpleadorId: Int) {
-        lateinit var jobOffer: JobOffer
+    private fun EmployeerById(empleadorId: Int) {
+        lateinit var employeers: employeers
 
-        val tvOfertaLaboralJobOffer = findViewById<TextView>(R.id.tvOfertaLaboralJobOffer)
-        val tvDescripcionJobOffer = findViewById<TextView>(R.id.tvDescripcionJobOffer)
-        val tvFechaPublicacionJobOffer = findViewById<TextView>(R.id.tvFechaPublicacionJobOffer)
-        val tvFechaFinalJobOffer = findViewById<TextView>(R.id.tvFechaFinalJobOffer)
-        val tvSalarioJobOffer = findViewById<TextView>(R.id.tvSalarioJobOffer)
-        val tvDireccionJobOffer = findViewById<TextView>(R.id.tvDireccionJobOffer)
+        val tvNombreEmpleadorPerfil = findViewById<TextView>(R.id.tvNombreEmpleadorPerfil)
+        val tvApellidoEmpleadorPerfil = findViewById<TextView>(R.id.tvApellidoEmpleadorPerfil)
+        val tvEmailEmpleadorPerfil = findViewById<TextView>(R.id.tvEmailEmpleadorPerfil)
+        val tvTelefonoEmpleadorPerfil = findViewById<TextView>(R.id.tvTelefonoEmpleadorPerfil)
+        val tvDocumentoEmpleadorPerfil = findViewById<TextView>(R.id.tvDocumentoEmpleadorPerfil)
+        val tvPosicionEmpleadorPerfil = findViewById<TextView>(R.id.tvPosicionEmpleadorPerfil)
 
         val retrofit = Retrofit.Builder()
             .baseUrl("https://jobagbackend.herokuapp.com/api/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
-        val service: JobOfferService = retrofit.create(JobOfferService::class.java)
+        val service: EmployeerService = retrofit.create(EmployeerService::class.java)
 
-        val request = service.JobOfferIdAndEmpleadorId(jobOfferId, EmpleadorId)
+        val request = service.EmployeerById(empleadorId)
 
-        request.enqueue(object : Callback<JobOffer>{
-            override fun onResponse(call: Call<JobOffer>, response: Response<JobOffer>) {
-                jobOffer = response.body()!!
+        request.enqueue(object : Callback<employeers> {
+            override fun onResponse(call: Call<employeers>, response: Response<employeers>) {
+                employeers = response.body()!!
 
-                tvOfertaLaboralJobOffer.text = jobOffer.title
-                tvDescripcionJobOffer.text = jobOffer.description
-                tvFechaPublicacionJobOffer.text = jobOffer.begin_date_offer
-                tvFechaFinalJobOffer.text = jobOffer.final_date_offer
-                tvSalarioJobOffer.text = jobOffer.salary.toString()
-                tvDireccionJobOffer.text = jobOffer.direction
+                tvNombreEmpleadorPerfil.text = employeers.firstname
+                tvApellidoEmpleadorPerfil.text = employeers.lastname
+                tvEmailEmpleadorPerfil.text = employeers.email
+                tvTelefonoEmpleadorPerfil.text = employeers.number.toString()
+                tvDocumentoEmpleadorPerfil.text = employeers.document.toString()
+                tvPosicionEmpleadorPerfil.text = employeers.posicion.toString()
             }
 
-            override fun onFailure(call: Call<JobOffer>, t: Throwable) {
-                Toast.makeText(this@OfertaByEmpleadoID, "No se pudo conectar, Intente de nuevo porfavor", Toast.LENGTH_LONG).show()
+            override fun onFailure(call: Call<employeers>, t: Throwable) {
+                Toast.makeText(this@PerfilEmpleadorActivity, "No se pudo conectar, Intente de nuevo porfavor", Toast.LENGTH_LONG).show()
             }
         })
     }

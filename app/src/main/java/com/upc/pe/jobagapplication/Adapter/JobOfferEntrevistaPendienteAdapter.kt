@@ -8,7 +8,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.upc.pe.jobagapplication.Model.JobOffer
 import com.upc.pe.jobagapplication.R
 
-class JobOfferEntrevistaPendienteAdapter (val joboffers: List<JobOffer>): RecyclerView.Adapter<JobOfferEmpleadorPrototype>() {
+class JobOfferEntrevistaPendienteAdapter (
+    val joboffers: List<JobOffer>,
+    val EmployeerId: Int
+    ): RecyclerView.Adapter<JobOfferEntrevistaPendienteAdapter.JobOfferEmpleadorPrototype>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): JobOfferEmpleadorPrototype {
         val view = LayoutInflater
             .from(parent.context)
@@ -17,21 +20,23 @@ class JobOfferEntrevistaPendienteAdapter (val joboffers: List<JobOffer>): Recycl
     }
 
     override fun onBindViewHolder(holder: JobOfferEmpleadorPrototype, position: Int) {
-        holder.bind(joboffers[position])
+        val addItem = joboffers[position]
+
+        if (EmployeerId == addItem.employeer.id){
+            holder.tvTitleJobOffer.text = addItem.title
+            holder.tvDateJobOffer.text = addItem.final_date_offer
+        }else{
+            holder.itemView.setVisibility(View.GONE)
+        }
     }
 
     override fun getItemCount(): Int {
         return joboffers.size
     }
 
-}
-
-class JobOfferEmpleadorPrototype(itemView: View) : RecyclerView.ViewHolder(itemView){
-    val tvTitleJobOffer = itemView.findViewById<TextView>(R.id.tvTitleJobOffer)
-    val tvDateJobOffer = itemView.findViewById<TextView>(R.id.tvDateInterview)
-
-    fun bind(JobOffer: JobOffer){
-        tvTitleJobOffer.text = JobOffer.title
-        tvDateJobOffer.text = JobOffer.final_date_offer
+    inner class JobOfferEmpleadorPrototype(itemView: View) : RecyclerView.ViewHolder(itemView){
+        val tvTitleJobOffer = itemView.findViewById<TextView>(R.id.tvTitleJobOffer)
+        val tvDateJobOffer = itemView.findViewById<TextView>(R.id.tvDateInterview)
     }
+
 }
