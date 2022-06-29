@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Empleador.LoginActivityEmpleador">
+
+    <Button
+        android:id="@+id/bt_Register_e"
+        android:layout_width="245dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="#00FFFFFF"
+        android:text="@string/registrarse"
+        android:textColor="#1955AE"
+        android:textColorHint="@color/black"
+        app:cornerRadius="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bt_Login_e" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="183dp"
+        android:layout_height="190dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/jobag_avatar"
+        android:contentDescription="@string/todo" />
+
+    <Button
+        android:id="@+id/bt_Login_e"
+        android:layout_width="245dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="28dp"
+        android:backgroundTint="#1955AE"
+        android:shadowRadius="@integer/material_motion_duration_short_1"
+        android:text="@string/ingresar"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        app:cornerRadius="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_password_e"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/et_email_e"
+        android:layout_width="293dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:background="#30ffffff"
+        android:drawableStart="@android:drawable/ic_dialog_email"
+        android:drawablePadding="20dp"
+        android:ems="10"
+        android:hint="@string/email"
+        android:importantForAutofill="no"
+        android:inputType="textEmailAddress"
+        android:padding="20dp"
+        android:textColor="#938C8C"
+        android:textColorHint="#938C8C"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        tools:ignore="MissingConstraints,TextContrastCheck" />
+
+    <EditText
+        android:id="@+id/et_password_e"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="57dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="57dp"
+        android:background="#30ffffff"
+        android:drawableStart="@drawable/ic_baseline_lock_24"
+        android:drawablePadding="20dp"
+        android:ems="10"
+        android:hint="@string/password"
+        android:importantForAutofill="no"
+        android:inputType="textPassword"
+        android:padding="20dp"
+        android:textColor="#938C8C"
+        android:textColorHint="#938C8C"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.517"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_email_e"
+        tools:ignore="MissingConstraints,TextContrastCheck" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="180dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/bienvenidor_empleador_login"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.506"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView5"
+        tools:ignore="MissingConstraints" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

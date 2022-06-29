@@ -8,6 +8,7 @@ import android.view.MenuItem
 import android.widget.TextView
 import android.widget.Toast
 import com.upc.pe.jobagapplication.Model.employeers
+import com.upc.pe.jobagapplication.Service.EmployeerInterface
 import com.upc.pe.jobagapplication.Service.EmployeerService
 import retrofit2.Call
 import retrofit2.Callback
@@ -41,7 +42,7 @@ class PerfilEmpleadorActivity : AppCompatActivity() {
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
-        val service: EmployeerService = retrofit.create(EmployeerService::class.java)
+        val service: EmployeerInterface = retrofit.create(EmployeerInterface::class.java)
 
         val request = service.EmployeerById(empleadorId)
 

@@ -35,4 +35,24 @@
     <string name="posicion">Posicion</string>
     <string name="crear_anuncio">Crear Anuncio</string>
     <string name="entrevistas_programadas">Entrevistas Programadas</string>
+    <string name="todo">TODO</string>
+    <string name="postulante">POSTULANTE</string>
+    <string name="empleador">EMPLEADOR</string>
+    <string name="bienvenido_a_jobag_login">Bienvenido a JoBag. Login</string>
+    <string name="no_tienes_cuenta_ingresa_aqu">¿No tienes cuenta? Ingresa aquí</string>
+    <string name="registrarse">REGISTRARSE</string>
+    <string name="ingresar">INGRESAR</string>
+    <string name="password">Password</string>
+    <string name="bienvenidor_empleador_login">Bienvenidor empleador. Login</string>
+    <string name="busqueda_de_empleos">BUSQUEDA DE EMPLEOS</string>
+    <string name="empieza_a_buscar_un_nuevo_empleo">Empieza a buscar un nuevo empleo</string>
+    <string name="puesto_empresa_o_palabra_clave">Puesto, empresa o palabra clave</string>
+    <string name="bienvenidor_postulante_login">Bienvenidor postulante. Login</string>
+    <string name="nombres">Nombres</string>
+    <string name="he_le_do_y_acepto_los_t_rminos_y_condiciones_de_jo_bag">He leído y acepto los términos y condiciones de Jo-Bag</string>
+    <string name="apellidos">Apellidos</string>
+    <string name="repetir_contrasena">Repetir Contraseña</string>
+    <string name="continuar">Continuar</string>
+    <string name="ruc">RUC</string>
+    <string name="nombre_de_la_empresa">Nombre de la Empresa</string>
 </resources>

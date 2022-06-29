@@ -17,9 +17,41 @@
         android:theme="@style/Theme.JoBagApplication"
         tools:targetApi="31">
         <activity
+            android:name=".Postulante.RegistrarActivityPerfil"
+            android:exported="false"
+            android:parentActivityName=".RegisterActivity"/>
+        <activity
+            android:name=".Postulante.RegisterActivityPostulante"
+            android:exported="false"
+            android:parentActivityName=".RegisterActivity"/>
+        <activity
+            android:name=".Postulante.PerfilActivityPostulante"
+            android:exported="false"
+            android:parentActivityName=".MainActivity"/>
+        <activity
+            android:name=".Postulante.LoginActivityPostulante"
+            android:exported="false"
+            android:parentActivityName=".MainActivity"/>
+        <activity
+            android:name=".HomeActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity"/>
+        <activity
+            android:name=".Empleador.RegisterActivityEmpleador"
+            android:exported="false"
+            android:parentActivityName=".RegisterActivity"/>
+        <activity
+            android:name=".Empleador.LoginActivityEmpleador"
+            android:exported="false"
+            android:parentActivityName=".MainActivity"/>
+        <activity
+            android:name=".RegisterActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
+        <activity
             android:name=".PerfilEmpleadorActivity"
             android:exported="false"
-            android:parentActivityName=".MainEmpleadorActivity"/>
+            android:parentActivityName=".MainEmpleadorActivity" />
         <activity
             android:name=".OfertaByEmpleadoID"
             android:exported="false"
