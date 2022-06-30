@@ -49,19 +49,19 @@
             android:exported="false"
             android:parentActivityName=".MainActivity" />
         <activity
-            android:name=".PerfilEmpleadorActivity"
+            android:name=".Empleador.PerfilEmpleadorActivity"
             android:exported="false"
-            android:parentActivityName=".MainEmpleadorActivity" />
+            android:parentActivityName=".Empleador.MainEmpleadorActivity" />
         <activity
-            android:name=".OfertaByEmpleadoID"
+            android:name=".Empleador.OfertaByEmpleadoID"
             android:exported="false"
-            android:parentActivityName=".MainEmpleadorActivity" />
+            android:parentActivityName=".Empleador.MainEmpleadorActivity" />
         <activity
-            android:name=".EntrevistasPendientesEmpleadorActivity"
+            android:name=".Empleador.EntrevistasPendientesEmpleadorActivity"
             android:exported="false"
-            android:parentActivityName=".MainEmpleadorActivity" />
+            android:parentActivityName=".Empleador.MainEmpleadorActivity" />
         <activity
-            android:name=".MainEmpleadorActivity"
+            android:name=".Empleador.MainEmpleadorActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

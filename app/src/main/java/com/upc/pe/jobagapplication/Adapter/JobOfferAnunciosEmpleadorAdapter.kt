@@ -24,7 +24,7 @@ class JobOfferAnunciosEmpleadorAdapter (
     }
 
     override fun onBindViewHolder(holder: JobOfferEmpleadorAnuncioPrototype, position: Int) {
-        val addItem = joboffers[position]
+            val addItem = joboffers[position]
 
         if (EmployeerId == addItem.employeer.id){
             holder.tvTittleAnuncioEmpleador.text = addItem.title

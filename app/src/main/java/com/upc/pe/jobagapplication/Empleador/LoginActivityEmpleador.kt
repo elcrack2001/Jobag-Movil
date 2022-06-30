@@ -6,12 +6,9 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
-import com.upc.pe.jobagapplication.HomeActivity
+import com.upc.pe.jobagapplication.*
 import com.upc.pe.jobagapplication.Model.employeers
-import com.upc.pe.jobagapplication.R
-import com.upc.pe.jobagapplication.RegisterActivity
 import com.upc.pe.jobagapplication.Service.EmployeerService
-import com.upc.pe.jobagapplication.SharedPreferences
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -28,15 +25,8 @@ class LoginActivityEmpleador : AppCompatActivity() {
         val btRegister = findViewById<Button>(R.id.bt_Register_e)
 
         btLogin.setOnClickListener {
-
-            val name = etUser.text.toString()
-            val password = etPassword.text.toString()
-            if (name.isNotBlank() && password.isNotBlank()) {
-                val id =  sharedPreferences.getValues("id")
-                if(!id.isNullOrBlank()){
-                    validateEmployeer()
-                }
-            }
+            val intent = Intent(this, MainEmpleadorActivity::class.java)
+            startActivity(intent)
         }
 
         btRegister.setOnClickListener {

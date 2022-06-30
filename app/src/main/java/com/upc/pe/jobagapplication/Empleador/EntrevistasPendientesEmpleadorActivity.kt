@@ -1,17 +1,17 @@
-package com.upc.pe.jobagapplication
+package com.upc.pe.jobagapplication.Empleador
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.upc.pe.jobagapplication.Adapter.JobOfferAnunciosEmpleadorAdapter
-import com.upc.pe.jobagapplication.Adapter.OnItemClickListener
+import com.upc.pe.jobagapplication.Adapter.JobOfferEntrevistaPendienteAdapter
+import com.upc.pe.jobagapplication.MainActivity
 import com.upc.pe.jobagapplication.Model.JobOffer
+import com.upc.pe.jobagapplication.R
 import com.upc.pe.jobagapplication.Service.JobOfferService
 import retrofit2.Call
 import retrofit2.Callback
@@ -19,20 +19,20 @@ import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-class MainEmpleadorActivity : AppCompatActivity(), OnItemClickListener {
+class EntrevistasPendientesEmpleadorActivity : AppCompatActivity() {
     lateinit var jobOffers: List<JobOffer>
-    lateinit var jobOfferAdapter: JobOfferAnunciosEmpleadorAdapter
-    val EmpleadorId: Int = 4;
+    lateinit var jobOfferAdapter: JobOfferEntrevistaPendienteAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main_empleador)
+        setContentView(R.layout.activity_entrevistas_pendientes_empleador)
 
-        LoadAnuncios()
+        val EmpleadorId = getIntent().getIntExtra("EmpleadorId", 0);
+        ListOfertasPublicadas(EmpleadorId)
     }
 
-    private fun LoadAnuncios() {
-        val rvMainEmpleadorAnuncios = findViewById<RecyclerView>(R.id.rvMainEmpleadorAnuncios)
+    private fun ListOfertasPublicadas(EmpleadorId: Int) {
+        val rvEntrevistasPendientes = findViewById<RecyclerView>(R.id.rvListEntrevistaPendienteEmpleador)
 
         //URL del API
         val retrofit = Retrofit.Builder()
@@ -42,19 +42,18 @@ class MainEmpleadorActivity : AppCompatActivity(), OnItemClickListener {
 
         val service: JobOfferService = retrofit.create(JobOfferService::class.java)
 
-        val request = service.AllJobOffer(EmpleadorId);
+        val request = service.AllJobOffer(EmpleadorId)
 
         request.enqueue(object : Callback<List<JobOffer>> {
             override fun onResponse(call: Call<List<JobOffer>>, response: Response<List<JobOffer>>) {
                 jobOffers = response.body()!!
-                jobOfferAdapter = JobOfferAnunciosEmpleadorAdapter(jobOffers, this@MainEmpleadorActivity, EmpleadorId)
-                Log.d("url", jobOffers.toString())
-                rvMainEmpleadorAnuncios.adapter = jobOfferAdapter
-                rvMainEmpleadorAnuncios.layoutManager = LinearLayoutManager(this@MainEmpleadorActivity)
+                jobOfferAdapter = JobOfferEntrevistaPendienteAdapter(jobOffers, EmpleadorId)
+                rvEntrevistasPendientes.adapter = jobOfferAdapter
+                rvEntrevistasPendientes.layoutManager = LinearLayoutManager(this@EntrevistasPendientesEmpleadorActivity)
             }
 
             override fun onFailure(call: Call<List<JobOffer>>, t: Throwable) {
-                Toast.makeText(this@MainEmpleadorActivity, "No se pudo conectar, Intente de nuevo porfavor", Toast.LENGTH_LONG).show()
+                Toast.makeText(this@EntrevistasPendientesEmpleadorActivity, "No se pudo conectar, Intente de nuevo porfavor", Toast.LENGTH_LONG).show()
             }
         })
     }
@@ -66,6 +65,7 @@ class MainEmpleadorActivity : AppCompatActivity(), OnItemClickListener {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         val id = item.getItemId()
+        val EmpleadorId = getIntent().getIntExtra("EmpleadorId", 0);
 
         if (id == R.id.Entrevistas_Empleador_Pendientes){
             val intent = Intent(this, EntrevistasPendientesEmpleadorActivity::class.java)
@@ -92,17 +92,5 @@ class MainEmpleadorActivity : AppCompatActivity(), OnItemClickListener {
         }
 
         return super.onOptionsItemSelected(item)
-    }
-
-    override fun OnItemClick(position: Int) {
-        val clickedItem = jobOffers[position]
-        val jobOfferId = position + 1
-        jobOfferAdapter.notifyItemChanged(position)
-
-        val intent = Intent(this, OfertaByEmpleadoID::class.java)
-        intent.putExtra("jobOfferId", jobOfferId)
-        intent.putExtra("EmpleadorId", EmpleadorId)
-        startActivity(intent)
-
     }
 }
