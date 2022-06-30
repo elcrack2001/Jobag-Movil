@@ -60,4 +60,9 @@
     <string name="estado">Estado</string>
     <string name="fecha_de_adquisicion">Fecha de Adquisicion</string>
     <string name="fecha">fecha</string>
+    <string name="buscar">BUSCAR</string>
+    <string name="b_squeda_de_empleo">BÚSQUEDA DE EMPLEO</string>
+    <string name="b_squeda_de_empleos">BÚSQUEDA DE EMPLEOS</string>
+    <string name="b_squeda_de_empleos_2">BÚSQUEDA DE EMPLEOS</string>
+    <string name="buscar3">BUSCAR</string>
 </resources>
