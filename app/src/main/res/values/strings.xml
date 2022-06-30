@@ -65,4 +65,21 @@
     <string name="b_squeda_de_empleos">BÚSQUEDA DE EMPLEOS</string>
     <string name="b_squeda_de_empleos_2">BÚSQUEDA DE EMPLEOS</string>
     <string name="buscar3">BUSCAR</string>
+    <string name="crear_nuevo_anuncio_de_trabajo" />
+    <string name="puesto" />
+    <string name="publicar" />
+    <string name="tipo" />
+    <string name="experiencia" />
+    <string name="t_tulo" />
+    <string name="sueldo" />
+    <string name="lugar" />
+    <string name="descripcionCAE" />
+    <string name="descripci_n">Descripción</string>
+    <string name="lugarCAE">Lugar</string>
+    <string name="sueldoCEA">Sueldo</string>
+    <string name="t_tuloCEA">Título</string>
+    <string name="experienciaCEA">Experiencia</string>
+    <string name="tipoCEA">Tipo</string>
+    <string name="puestoCEA">Puesto</string>
+    <string name="publicarCEA">Publicar</string>
 </resources>
