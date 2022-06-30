@@ -17,51 +17,55 @@
         android:theme="@style/Theme.JoBagApplication"
         tools:targetApi="31">
         <activity
+            android:name=".SuscripcionEmpleador"
+            android:parentActivityName=".MainEmpleadorActivity"
+            android:exported="false" />
+        <activity
             android:name=".Postulante.RegistrarActivityPerfil"
             android:exported="false"
-            android:parentActivityName=".RegisterActivity"/>
+            android:parentActivityName=".RegisterActivity" />
         <activity
             android:name=".Postulante.RegisterActivityPostulante"
             android:exported="false"
-            android:parentActivityName=".RegisterActivity"/>
+            android:parentActivityName=".RegisterActivity" />
         <activity
             android:name=".Postulante.PerfilActivityPostulante"
             android:exported="false"
-            android:parentActivityName=".MainActivity"/>
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".Postulante.LoginActivityPostulante"
             android:exported="false"
-            android:parentActivityName=".MainActivity"/>
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".HomeActivity"
             android:exported="false"
-            android:parentActivityName=".MainActivity"/>
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".Empleador.RegisterActivityEmpleador"
             android:exported="false"
-            android:parentActivityName=".RegisterActivity"/>
+            android:parentActivityName=".RegisterActivity" />
         <activity
             android:name=".Empleador.LoginActivityEmpleador"
             android:exported="false"
-            android:parentActivityName=".MainActivity"/>
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".RegisterActivity"
             android:exported="false"
             android:parentActivityName=".MainActivity" />
         <activity
-            android:name=".Empleador.PerfilEmpleadorActivity"
+            android:name=".PerfilEmpleadorActivity"
             android:exported="false"
-            android:parentActivityName=".Empleador.MainEmpleadorActivity" />
+            android:parentActivityName=".MainEmpleadorActivity" />
         <activity
-            android:name=".Empleador.OfertaByEmpleadoID"
+            android:name=".OfertaByEmpleadoID"
             android:exported="false"
-            android:parentActivityName=".Empleador.MainEmpleadorActivity" />
+            android:parentActivityName=".MainEmpleadorActivity" />
         <activity
-            android:name=".Empleador.EntrevistasPendientesEmpleadorActivity"
+            android:name=".EntrevistasPendientesEmpleadorActivity"
             android:exported="false"
-            android:parentActivityName=".Empleador.MainEmpleadorActivity" />
+            android:parentActivityName=".MainEmpleadorActivity" />
         <activity
-            android:name=".Empleador.MainEmpleadorActivity"
+            android:name=".MainEmpleadorActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

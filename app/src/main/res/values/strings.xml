@@ -55,4 +55,9 @@
     <string name="continuar">Continuar</string>
     <string name="ruc">RUC</string>
     <string name="nombre_de_la_empresa">Nombre de la Empresa</string>
+    <string name="suscripcion">SUSCRIPCION</string>
+    <string name="suscripcion_activity">Suscripcion</string>
+    <string name="estado">Estado</string>
+    <string name="fecha_de_adquisicion">Fecha de Adquisicion</string>
+    <string name="fecha">fecha</string>
 </resources>

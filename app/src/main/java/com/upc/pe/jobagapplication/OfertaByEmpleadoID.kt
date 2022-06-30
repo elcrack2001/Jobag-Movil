@@ -1,4 +1,4 @@
-package com.upc.pe.jobagapplication.Empleador
+package com.upc.pe.jobagapplication
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -7,9 +7,7 @@ import android.view.Menu
 import android.view.MenuItem
 import android.widget.TextView
 import android.widget.Toast
-import com.upc.pe.jobagapplication.MainActivity
 import com.upc.pe.jobagapplication.Model.JobOffer
-import com.upc.pe.jobagapplication.R
 import com.upc.pe.jobagapplication.Service.JobOfferService
 import retrofit2.Call
 import retrofit2.Callback
@@ -90,6 +88,13 @@ class OfertaByEmpleadoID : AppCompatActivity() {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
             Toast.makeText(this, "Se cerro la sesion correctamente", Toast.LENGTH_LONG).show()
+        }
+
+        if (id == R.id.Suscripcion_Empleador){
+            val intent = Intent(this, SuscripcionEmpleador::class.java)
+            //Pasar el id del empleador al activity
+            intent.putExtra("EmpleadorId", EmpleadorId)
+            startActivity(intent)
         }
 
         if (id == R.id.Perfil_Empleador){
