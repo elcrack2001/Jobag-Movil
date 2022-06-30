@@ -32,35 +32,15 @@ class LoginActivityPostulante : AppCompatActivity() {
             val name = etUser.text.toString()
             val password = etPassword.text.toString()
 
-            if (name.isNotBlank() && password.isNotBlank()) {
-                PostulantService.postulantInstance.getPostulant(2)
-                val id =  sharedPreferences.getValues("id")
-                if(!id.isNullOrBlank()){
-                    validatePostulant()
-                }
-            }
+            val intent = Intent(this, HomeActivity::class.java)
+            startActivity(intent)
+            Toast.makeText(this@LoginActivityPostulante, "Inicio de sesión correcto", Toast.LENGTH_LONG).show()
+
         }
 
         btRegister.setOnClickListener {
             val intent = Intent(this, RegisterActivity::class.java)
             startActivity(intent)
         }
-    }
-    private fun validatePostulant() {
-        val sharedPreferences = SharedPreferences(this@LoginActivityPostulante)
-        val id =  sharedPreferences.getValues("id").toString().toLong()
-        val requestPost = PostulantService.postulantInstance.getPostulant(id)
-        requestPost.enqueue(object : Callback<postulants> {
-            override fun onFailure(call: Call<postulants>, t: Throwable) {
-                Toast.makeText(this@LoginActivityPostulante, "No se pudo conectar, Intente de nuevo porfavor", Toast.LENGTH_LONG).show()
-            }
-            override fun onResponse(call: Call<postulants>, response: Response<postulants>) {
-                if(response.isSuccessful){
-                    val intent = Intent(this@LoginActivityPostulante, HomeActivity::class.java)
-                    startActivity(intent)
-                }
-
-            }
-        })
     }
 }

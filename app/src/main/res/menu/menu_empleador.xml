@@ -20,10 +20,6 @@
         android:title="@string/entrevistas_programadas"/>
 
     <item
-        android:id="@+id/Cuenta_Empleador"
-        android:title="@string/cuenta_empleador_menu"/>
-
-    <item
         android:id="@+id/Perfil_Empleador"
         android:title="@string/perfil_empleador_menu"/>
 

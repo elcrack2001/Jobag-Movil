@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EmpleoActivity2">
+
+    <TextView
+        android:id="@+id/textView43"
+        android:layout_width="387dp"
+        android:layout_height="612dp"
+        android:layout_marginTop="56dp"
+        android:background="#DCD9D9"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.666"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/textView51"
+        android:layout_width="314dp"
+        android:layout_height="269dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="48dp"
+        android:text="@string/nuestro_cliente_en_tecnolog_a_de_la_informaci_n_con_m_s_de_39_a_os_en_el_sector_enfocado_en_proyectos_de_medio_de_pago_pos_se_encuentra_en_b_squeda_de_un_programador_front_end_requisitos_experiencia_en_angular_nivel_avanzado_en_html5_css3_javascript_jquery_experiencia_en_creaci_n_de_mockups_wireframe_y_prototipos_experiencia_en_consumo_api_rest_experiencia_ux_opcional_conocimiento_git_ofrecemos_ingreso_a_planilla_trabajo_remoto"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView50"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/textView47"
+        android:layout_width="76dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/claro"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView48"
+        tools:ignore="MissingConstraints"
+        tools:text="Movistar" />
+
+    <TextView
+        android:id="@+id/textView48"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="100dp"
+        android:text="@string/desarrollador_frontend"
+        android:textColor="#3F51B5"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textView43"
+        tools:ignore="MissingConstraints"
+        tools:text="Desarrollador Frontend" />
+
+    <TextView
+        android:id="@+id/textView49"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/sueldo_no_especificado"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView47"
+        tools:ignore="MissingConstraints"
+        tools:text="Sueldo: 1025 soles" />
+
+    <TextView
+        android:id="@+id/textView50"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="28dp"
+        android:text="@string/detalles_del_aviso"
+        android:textColor="#3F51B5"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView49"
+        tools:ignore="MissingConstraints"
+        tools:text="Detalles del Aviso" />
+</androidx.constraintlayout.widget.ConstraintLayout>

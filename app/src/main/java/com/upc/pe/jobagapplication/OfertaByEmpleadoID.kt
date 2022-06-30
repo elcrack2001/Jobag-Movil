@@ -3,7 +3,6 @@ package com.upc.pe.jobagapplication
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.TextView
@@ -17,7 +16,6 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 class OfertaByEmpleadoID : AppCompatActivity() {
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -90,6 +88,13 @@ class OfertaByEmpleadoID : AppCompatActivity() {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
             Toast.makeText(this, "Se cerro la sesion correctamente", Toast.LENGTH_LONG).show()
+        }
+
+        if (id == R.id.Suscripcion_Empleador){
+            val intent = Intent(this, SuscripcionEmpleador::class.java)
+            //Pasar el id del empleador al activity
+            intent.putExtra("EmpleadorId", EmpleadorId)
+            startActivity(intent)
         }
 
         if (id == R.id.Perfil_Empleador){

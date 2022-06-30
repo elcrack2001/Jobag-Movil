@@ -3,35 +3,37 @@ package com.upc.pe.jobagapplication
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.TextView
 import android.widget.Toast
 import com.upc.pe.jobagapplication.Model.employeers
+import com.upc.pe.jobagapplication.Model.planemployeers
+import com.upc.pe.jobagapplication.R
 import com.upc.pe.jobagapplication.Service.EmployeerInterface
+import com.upc.pe.jobagapplication.Service.PlanEmployeers
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-class PerfilEmpleadorActivity : AppCompatActivity() {
+class SuscripcionEmpleador : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_perfil_empleador)
+        setContentView(R.layout.activity_suscripcion_empleador)
 
-        EmployeerById(1)
+        Empleador(1)
+        Suscripcion(1,1)
     }
 
-    private fun EmployeerById(empleadorId: Int) {
+    private fun Empleador(empleadorId: Int) {
         lateinit var employeers: employeers
 
-        val tvNombreEmpleadorPerfil = findViewById<TextView>(R.id.tvNombreEmpleadorPerfil)
-        val tvApellidoEmpleadorPerfil = findViewById<TextView>(R.id.tvApellidoEmpleadorPerfil)
-        val tvEmailEmpleadorPerfil = findViewById<TextView>(R.id.tvEmailEmpleadorPerfil)
-        val tvTelefonoEmpleadorPerfil = findViewById<TextView>(R.id.tvTelefonoEmpleadorPerfil)
-        val tvDocumentoEmpleadorPerfil = findViewById<TextView>(R.id.tvDocumentoEmpleadorPerfil)
-        val tvPosicionEmpleadorPerfil = findViewById<TextView>(R.id.tvPosicionEmpleadorPerfil)
+        val tvNombreSuscripcion = findViewById<TextView>(R.id.tvNombreSuscripcion)
+        val tvApellidoSuscripcion = findViewById<TextView>(R.id.tvApellidoSuscripcion)
+        val tvEmailSuscripcion = findViewById<TextView>(R.id.tvEmailSuscripcion)
 
         val retrofit = Retrofit.Builder()
             .baseUrl("https://jobagbackend.herokuapp.com/api/")
@@ -46,16 +48,49 @@ class PerfilEmpleadorActivity : AppCompatActivity() {
             override fun onResponse(call: Call<employeers>, response: Response<employeers>) {
                 employeers = response.body()!!
 
-                tvNombreEmpleadorPerfil.text = employeers.firstname
-                tvApellidoEmpleadorPerfil.text = employeers.lastname
-                tvEmailEmpleadorPerfil.text = employeers.email
-                tvTelefonoEmpleadorPerfil.text = employeers.number.toString()
-                tvDocumentoEmpleadorPerfil.text = employeers.document.toString()
-                tvPosicionEmpleadorPerfil.text = employeers.posicion.toString()
+                tvNombreSuscripcion.text = employeers.firstname
+                tvApellidoSuscripcion.text = employeers.lastname
+                tvEmailSuscripcion.text = employeers.email
             }
 
             override fun onFailure(call: Call<employeers>, t: Throwable) {
-                Toast.makeText(this@PerfilEmpleadorActivity, "No se pudo conectar, Intente de nuevo porfavor", Toast.LENGTH_LONG).show()
+                Toast.makeText(this@SuscripcionEmpleador, "No se pudo conectar, Intente de nuevo porfavor", Toast.LENGTH_LONG).show()
+            }
+        })
+    }
+
+    private fun Suscripcion(empleadorId: Int, planEmployeerId: Int) {
+        lateinit var planemployeers: planemployeers
+
+        val tvSuscripcion = findViewById<TextView>(R.id.tvSuscripcion)
+        val tvEstadoSuscripcion = findViewById<TextView>(R.id.tvEstadoSuscripcion)
+        val tvFechaSuscripcion = findViewById<TextView>(R.id.tvFechaSuscripcion)
+
+        val retrofit = Retrofit.Builder()
+            .baseUrl("https://jobagbackend.herokuapp.com/api/")
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+
+        val service: PlanEmployeers = retrofit.create(PlanEmployeers::class.java)
+
+        val request = service.SuscriptionByIdAndEmployeerId(empleadorId,planEmployeerId)
+
+        Log.d("url",
+            service.SuscriptionByIdAndEmployeerId(empleadorId,planEmployeerId).request().toString()
+        )
+
+        request.enqueue(object : Callback<planemployeers> {
+            override fun onResponse(call: Call<planemployeers>, response: Response<planemployeers>) {
+                planemployeers = response.body()!!
+
+                Log.d("url",planemployeers.toString())
+                tvSuscripcion.text = planemployeers.description
+                tvEstadoSuscripcion.text = planemployeers.asistence.toString()
+                tvFechaSuscripcion.text = planemployeers.duration
+            }
+
+            override fun onFailure(call: Call<planemployeers>, t: Throwable) {
+                Toast.makeText(this@SuscripcionEmpleador, "No se pudo conectar, Intente de nuevo porfavor", Toast.LENGTH_LONG).show()
             }
         })
     }
@@ -102,4 +137,6 @@ class PerfilEmpleadorActivity : AppCompatActivity() {
 
         return super.onOptionsItemSelected(item)
     }
+
+
 }

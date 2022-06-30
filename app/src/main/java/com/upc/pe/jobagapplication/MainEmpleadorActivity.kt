@@ -22,7 +22,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 class MainEmpleadorActivity : AppCompatActivity(), OnItemClickListener {
     lateinit var jobOffers: List<JobOffer>
     lateinit var jobOfferAdapter: JobOfferAnunciosEmpleadorAdapter
-    val EmpleadorId: Int = 4;
+    val EmpleadorId: Int = 1;
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,7 +42,7 @@ class MainEmpleadorActivity : AppCompatActivity(), OnItemClickListener {
 
         val service: JobOfferService = retrofit.create(JobOfferService::class.java)
 
-        val request = service.AllJobOffer(EmpleadorId);
+        val request = service.AllJobOffer(EmpleadorId)
 
         request.enqueue(object : Callback<List<JobOffer>> {
             override fun onResponse(call: Call<List<JobOffer>>, response: Response<List<JobOffer>>) {
@@ -73,6 +73,11 @@ class MainEmpleadorActivity : AppCompatActivity(), OnItemClickListener {
             startActivity(intent)
         }
 
+        if (id == R.id.Anuncios_Empleador_Crear){
+            val intent = Intent(this, CreateAnuncioEmpleador::class.java)
+            startActivity(intent)
+        }
+
         if (id == R.id.Inicio_Empleador){
             val intent = Intent(this, MainEmpleadorActivity::class.java)
             startActivity(intent)
@@ -82,6 +87,13 @@ class MainEmpleadorActivity : AppCompatActivity(), OnItemClickListener {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
             Toast.makeText(this, "Se cerro la sesion correctamente", Toast.LENGTH_LONG).show()
+        }
+
+        if (id == R.id.Suscripcion_Empleador){
+            val intent = Intent(this, SuscripcionEmpleador::class.java)
+            //Pasar el id del empleador al activity
+            intent.putExtra("EmpleadorId", EmpleadorId)
+            startActivity(intent)
         }
 
         if (id == R.id.Perfil_Empleador){

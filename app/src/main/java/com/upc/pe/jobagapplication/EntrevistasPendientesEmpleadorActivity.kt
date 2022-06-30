@@ -25,8 +25,7 @@ class EntrevistasPendientesEmpleadorActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_entrevistas_pendientes_empleador)
 
-        val EmpleadorId = getIntent().getIntExtra("EmpleadorId", 0);
-        ListOfertasPublicadas(EmpleadorId)
+        ListOfertasPublicadas(1)
     }
 
     private fun ListOfertasPublicadas(EmpleadorId: Int) {
@@ -80,6 +79,13 @@ class EntrevistasPendientesEmpleadorActivity : AppCompatActivity() {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
             Toast.makeText(this, "Se cerro la sesion correctamente", Toast.LENGTH_LONG).show()
+        }
+
+        if (id == R.id.Suscripcion_Empleador){
+            val intent = Intent(this, SuscripcionEmpleador::class.java)
+            //Pasar el id del empleador al activity
+            intent.putExtra("EmpleadorId", EmpleadorId)
+            startActivity(intent)
         }
 
         if (id == R.id.Perfil_Empleador){
