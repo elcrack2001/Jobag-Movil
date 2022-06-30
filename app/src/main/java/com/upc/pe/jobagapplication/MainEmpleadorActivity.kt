@@ -73,6 +73,11 @@ class MainEmpleadorActivity : AppCompatActivity(), OnItemClickListener {
             startActivity(intent)
         }
 
+        if (id == R.id.Anuncios_Empleador_Crear){
+            val intent = Intent(this, CreateAnuncioEmpleador::class.java)
+            startActivity(intent)
+        }
+
         if (id == R.id.Inicio_Empleador){
             val intent = Intent(this, MainEmpleadorActivity::class.java)
             startActivity(intent)

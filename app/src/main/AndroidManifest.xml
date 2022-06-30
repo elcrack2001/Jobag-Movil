@@ -17,9 +17,13 @@
         android:theme="@style/Theme.JoBagApplication"
         tools:targetApi="31">
         <activity
-            android:name=".SuscripcionEmpleador"
+            android:name=".CreateAnuncioEmpleador"
             android:parentActivityName=".MainEmpleadorActivity"
             android:exported="false" />
+        <activity
+            android:name=".SuscripcionEmpleador"
+            android:exported="false"
+            android:parentActivityName=".MainEmpleadorActivity" />
         <activity
             android:name=".Postulante.RegistrarActivityPerfil"
             android:exported="false"
