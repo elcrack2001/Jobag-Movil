@@ -7,7 +7,7 @@
     tools:context=".SuscripcionEmpleador">
 
     <ImageView
-        android:id="@+id/iv_Claro"
+        android:id="@+id/iv_Claro_Filter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="56dp"
@@ -31,7 +31,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.539"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iv_Claro" />
+        app:layout_constraintTop_toBottomOf="@+id/iv_Claro_Filter" />
 
     <TextView
         android:id="@+id/textView7"

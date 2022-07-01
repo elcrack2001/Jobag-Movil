@@ -17,7 +17,5 @@ class HomeActivity : AppCompatActivity() {
             val intent =Intent(this, FilterActivity::class.java)
             startActivity(intent)
         }
-
-
     }
 }

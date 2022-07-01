@@ -64,7 +64,7 @@ class OfertaByEmpleadoID : AppCompatActivity() {
         })
     }
 
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
         getMenuInflater().inflate(R.menu.menu_empleador, menu)
         return super.onCreateOptionsMenu(menu)
     }

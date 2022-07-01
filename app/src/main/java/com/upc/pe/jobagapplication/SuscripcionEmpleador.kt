@@ -10,7 +10,6 @@ import android.widget.TextView
 import android.widget.Toast
 import com.upc.pe.jobagapplication.Model.employeers
 import com.upc.pe.jobagapplication.Model.planemployeers
-import com.upc.pe.jobagapplication.R
 import com.upc.pe.jobagapplication.Service.EmployeerInterface
 import com.upc.pe.jobagapplication.Service.PlanEmployeers
 import retrofit2.Call
@@ -95,7 +94,7 @@ class SuscripcionEmpleador : AppCompatActivity() {
         })
     }
 
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
         getMenuInflater().inflate(R.menu.menu_empleador, menu)
         return super.onCreateOptionsMenu(menu)
     }

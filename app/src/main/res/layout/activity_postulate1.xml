@@ -22,10 +22,12 @@
         android:layout_width="280dp"
         android:layout_height="69dp"
         android:layout_marginTop="24dp"
+        android:layout_marginBottom="38dp"
         android:text="@string/adjunta_tu_hoja_de_vida_detallando_informaci_n_relevante_para_el_puesto_de_trabajo_al_que_postulas"
         android:textAlignment="center"
         android:textSize="16sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/btnSelecccionarArchivo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
@@ -36,6 +38,7 @@
         android:id="@+id/textView59"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
         android:text="@string/detalles_del_aviso"
         android:textColor="#3F51B5"
         android:textSize="20sp"
@@ -43,33 +46,36 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.483"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textView55"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="284dp"
         tools:text="Envío de CV" />
 
     <Button
         android:id="@+id/btnSelecccionarArchivo"
         android:layout_width="205dp"
         android:layout_height="47dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginBottom="32dp"
         android:backgroundTint="#00FFFFFF"
         android:hint="@string/seleccionar_archivo"
+        app:layout_constraintBottom_toBottomOf="@+id/textView55"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView54" />
+        app:layout_constraintTop_toBottomOf="@+id/textView54"
+        app:layout_constraintVertical_bias="0.974" />
 
     <TextView
         android:id="@+id/textView53"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="56dp"
         android:text="@string/desarrollador_backend_c"
         android:textColor="#3F51B5"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="60dp"
         tools:text="Desarrollador Backend C#" />
 
     <TextView
@@ -103,10 +109,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
+        android:layout_marginBottom="24dp"
+        android:contentDescription="@string/todo"
+        app:layout_constraintBottom_toTopOf="@+id/textView54"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView59"
-        app:srcCompat="@drawable/cv"
-        android:contentDescription="@string/todo" />
+        app:srcCompat="@drawable/cv" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

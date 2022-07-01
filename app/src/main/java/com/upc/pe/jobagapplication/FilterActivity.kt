@@ -7,13 +7,14 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.Toast
+import com.upc.pe.jobagapplication.Empleador.LoginActivityEmpleador
 
 class FilterActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_filter)
 
-        val ivClaro = findViewById<ImageView>(R.id.iv_Claro)
+        val ivClaro = findViewById<ImageView>(R.id.iv_Claro_Filter)
         val ivMovistar = findViewById<ImageView>(R.id.iv_Movistar)
 
         ivClaro.setOnClickListener {
