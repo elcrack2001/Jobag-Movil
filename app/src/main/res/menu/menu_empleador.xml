@@ -8,10 +8,6 @@
         android:title="@string/inicio_menu" />
 
     <item
-        android:id="@+id/Anuncios_Empleador"
-        android:title="@string/anuncios_empleador_menu"/>
-
-    <item
         android:id="@+id/Anuncios_Empleador_Crear"
         android:title="@string/crear_anuncio"/>
 
