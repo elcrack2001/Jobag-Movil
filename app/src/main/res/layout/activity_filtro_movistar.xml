@@ -44,7 +44,7 @@
         android:layout_height="19dp"
         android:layout_marginEnd="8dp"
         app:layout_constraintEnd_toEndOf="@+id/textView20"
-        app:layout_constraintTop_toBottomOf="@+id/imageView10"
+        app:layout_constraintTop_toBottomOf="@+id/iv_Movistar"
         tools:text="Publicado el 22 de mayo" />
 
     <TextView
@@ -117,7 +117,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout13" />
 
     <ImageView
-        android:id="@+id/imageView10"
+        android:id="@+id/iv_Movistar"
         android:layout_width="101dp"
         android:layout_height="83dp"
         android:layout_marginTop="12dp"

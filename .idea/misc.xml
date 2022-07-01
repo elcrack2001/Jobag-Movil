@@ -46,10 +46,42 @@
         <entry key="..\:/2022-01/Aplicaciones_Moviles/JobagGit/Jobag-Movil/app/src/main/res/layout/prototype_entrevista_pendiente_empleador.xml" value="0.33" />
         <entry key="..\:/2022-01/Aplicaciones_Moviles/JobagGit/Jobag-Movil/app/src/main/res/menu/activity_suscripcion_empleador.xml" value="0.14583333333333334" />
         <entry key="..\:/2022-01/Aplicaciones_Moviles/JobagGit/Jobag-Movil/app/src/main/res/menu/menu_empleador.xml" value="0.19270833333333334" />
+<<<<<<< HEAD
+=======
+        <entry key="..\:/Users/HP/Desktop/Nicole/Jobag-Movil/app/src/main/res/layout/activity_create_anuncio_empleador.xml" value="0.15489130434782608" />
+        <entry key="..\:/Users/HP/Desktop/Nicole/Jobag-Movil/app/src/main/res/layout/activity_empleo1.xml" value="0.19270833333333334" />
+        <entry key="..\:/Users/HP/Desktop/Nicole/Jobag-Movil/app/src/main/res/layout/activity_empleo2.xml" value="0.19270833333333334" />
+        <entry key="..\:/Users/HP/Desktop/Nicole/Jobag-Movil/app/src/main/res/layout/activity_filter.xml" value="0.19270833333333334" />
+        <entry key="..\:/Users/HP/Desktop/Nicole/Jobag-Movil/app/src/main/res/layout/activity_filtro.xml" value="0.13858695652173914" />
+        <entry key="..\:/Users/HP/Desktop/Nicole/Jobag-Movil/app/src/main/res/layout/activity_filtro_claro.xml" value="0.19270833333333334" />
+        <entry key="..\:/Users/HP/Desktop/Nicole/Jobag-Movil/app/src/main/res/layout/activity_home.xml" value="0.15489130434782608" />
+        <entry key="..\:/Users/HP/Desktop/Nicole/Jobag-Movil/app/src/main/res/layout/activity_postulate1.xml" value="0.33" />
+        <entry key="..\:/Users/HP/Desktop/Nicole/Jobag-Movil/app/src/main/res/layout/dialog.xml" value="0.19270833333333334" />
+        <entry key="..\:/Users/HP/Desktop/Nicole/Jobag-Movil/app/src/main/res/menu/menu_empleador.xml" value="0.19270833333333334" />
+>>>>>>> feature/nicol
         <entry key="..\:/Users/Usuario/Documents/GitHub/Jobag-Movil/app/src/main/res/layout/activity_filtro.xml" value="0.25" />
         <entry key="..\:/Users/Usuario/Documents/GitHub/Jobag-Movil/app/src/main/res/layout/activity_filtro_alicorp.xml" value="0.3482789855072464" />
         <entry key="..\:/Users/Usuario/Documents/GitHub/Jobag-Movil/app/src/main/res/layout/activity_filtro_claro.xml" value="0.3482789855072464" />
         <entry key="..\:/Users/Usuario/Documents/GitHub/Jobag-Movil/app/src/main/res/layout/activity_filtro_movistar.xml" value="0.3482789855072464" />
+<<<<<<< HEAD
+=======
+        <entry key="..\:/jobag final/Jobag-Movil-main (2)/Jobag-Movil-main/app/src/main/res/drawable/ic_menu_slideshow.xml" value="0.204" />
+        <entry key="..\:/jobag final/Jobag-Movil-main (2)/Jobag-Movil-main/app/src/main/res/layout/activity_empleo1.xml" value="0.2" />
+        <entry key="..\:/jobag final/Jobag-Movil-main (2)/Jobag-Movil-main/app/src/main/res/layout/activity_empleo2.xml" value="0.2" />
+        <entry key="..\:/jobag final/Jobag-Movil-main (2)/Jobag-Movil-main/app/src/main/res/layout/activity_filter.xml" value="0.264" />
+        <entry key="..\:/jobag final/Jobag-Movil-main (2)/Jobag-Movil-main/app/src/main/res/layout/activity_filtro.xml" value="0.2" />
+        <entry key="..\:/jobag final/Jobag-Movil-main (2)/Jobag-Movil-main/app/src/main/res/layout/activity_filtro_alicorp.xml" value="0.12" />
+        <entry key="..\:/jobag final/Jobag-Movil-main (2)/Jobag-Movil-main/app/src/main/res/layout/activity_filtro_claro.xml" value="0.1" />
+        <entry key="..\:/jobag final/Jobag-Movil-main (2)/Jobag-Movil-main/app/src/main/res/layout/activity_home.xml" value="0.12360688956433637" />
+        <entry key="..\:/jobag final/Jobag-Movil-main (2)/Jobag-Movil-main/app/src/main/res/layout/activity_main.xml" value="0.12360688956433637" />
+        <entry key="..\:/jobag final/Jobag-Movil-main (2)/Jobag-Movil-main/app/src/main/res/layout/activity_postulate1.xml" value="0.264" />
+        <entry key="..\:/jobag final/Jobag-Movil-main (2)/Jobag-Movil-main/app/src/main/res/layout/activity_postulate2.xml" value="0.2" />
+        <entry key="..\:/jobag final/Jobag-Movil-main (2)/Jobag-Movil-main/app/src/main/res/layout/activity_postulate3.xml" value="0.264" />
+        <entry key="..\:/jobag final/Jobag-Movil-main (2)/Jobag-Movil-main/app/src/main/res/layout/activity_postulate4.xml" value="0.12360688956433637" />
+        <entry key="..\:/jobag final/Jobag-Movil-main (2)/Jobag-Movil-main/app/src/main/res/layout/activity_register_postulante.xml" value="0.12360688956433637" />
+        <entry key="..\:/jobag final/Jobag-Movil-main (2)/Jobag-Movil-main/app/src/main/res/layout/dialog.xml" value="0.2" />
+        <entry key="..\:/jobag final/Jobag-Movil-main (2)/Jobag-Movil-main/app/src/main/res/menu/menu_empleador.xml" value="0.15555555555555556" />
+>>>>>>> feature/nicol
       </map>
     </option>
   </component>

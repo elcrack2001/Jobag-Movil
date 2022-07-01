@@ -10,13 +10,18 @@
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="120dp"
         android:text="@string/busqueda_de_empleos"
         android:textAlignment="center"
         android:textColor="#1955AE"
         android:textSize="20sp"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="90dp"
-        tools:layout_editor_absoluteY="100dp"
+        app:layout_constraintBottom_toTopOf="@+id/tilTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.513"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
         tools:ignore="MissingConstraints" />
 
     <TextView

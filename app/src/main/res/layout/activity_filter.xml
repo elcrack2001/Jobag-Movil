@@ -3,7 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".FilterActivity">
+
 
     <TextView
         android:id="@+id/textView32"
@@ -24,6 +26,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="20dp"
+        android:text="@string/part_time"
         app:layout_constraintStart_toStartOf="@+id/textView32"
         app:layout_constraintTop_toBottomOf="@+id/textView33"
         tools:text="Part Time" />
@@ -33,6 +36,7 @@
         android:layout_width="wrap_content"
         android:layout_height="19dp"
         android:layout_marginEnd="8dp"
+        android:text="@string/publicado_el_5_de_abril"
         app:layout_constraintEnd_toEndOf="@+id/textView32"
         app:layout_constraintTop_toBottomOf="@+id/iv_Alicorp"
         tools:text="Publicado el 5 de abril" />
@@ -43,6 +47,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="12dp"
+        android:text="@string/santiago_de_surco_lima"
         android:textSize="12sp"
         app:layout_constraintStart_toStartOf="@+id/textView32"
         app:layout_constraintTop_toTopOf="@+id/textView32"
@@ -55,6 +60,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="28dp"
+        android:text="@string/practicante_java"
         android:textColor="#3F51B5"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -68,6 +74,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="4dp"
+        android:text="@string/backus"
         app:layout_constraintStart_toStartOf="@+id/textView32"
         app:layout_constraintTop_toBottomOf="@+id/textView37"
         tools:text="Backus" />
@@ -91,6 +98,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="4dp"
+        android:text="@string/claro"
         app:layout_constraintStart_toStartOf="@+id/textView20"
         app:layout_constraintTop_toBottomOf="@+id/textView28"
         tools:text="Claro" />
@@ -101,6 +109,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
+        android:text="@string/full_time"
         app:layout_constraintStart_toStartOf="@+id/textView20"
         app:layout_constraintTop_toBottomOf="@+id/textView29"
         tools:text="Full Time" />
@@ -110,6 +119,7 @@
         android:layout_width="wrap_content"
         android:layout_height="19dp"
         android:layout_marginEnd="8dp"
+        android:text="@string/publicado_el_22_de_mayo"
         app:layout_constraintEnd_toEndOf="@+id/textView20"
         app:layout_constraintTop_toBottomOf="@+id/iv_Movistar"
         tools:text="Publicado el 22 de mayo" />
@@ -120,6 +130,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="12dp"
+        android:text="@string/san_borja_lima"
         android:textSize="12sp"
         app:layout_constraintStart_toStartOf="@+id/textView20"
         app:layout_constraintTop_toTopOf="@+id/textView20"
@@ -132,6 +143,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="28dp"
+        android:text="@string/desarrollador_frontend"
         android:textColor="#3F51B5"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="@+id/textView20"
@@ -189,13 +201,14 @@
         android:layout_width="407dp"
         android:layout_height="131dp"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="12dp"
         android:layout_marginEnd="10dp"
         android:background="#DCD9D9"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.75"
+        app:layout_constraintHorizontal_bias="0.416"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btBusEm_Buscar" />
+        app:layout_constraintTop_toBottomOf="@+id/btBusEm_Buscar"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/textView15"
@@ -203,6 +216,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="12dp"
+        android:text="@string/san_isidro_lima"
         android:textSize="12sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/textView13"
@@ -215,6 +229,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="28dp"
+        android:text="@string/desarrollador_backend_c"
         android:textColor="#3F51B5"
         android:textSize="20sp"
         app:layout_constraintEnd_toStartOf="@+id/iv_Claro_Filter"
@@ -241,6 +256,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="4dp"
+        android:text="@string/claro"
         app:layout_constraintStart_toStartOf="@+id/textView13"
         app:layout_constraintTop_toBottomOf="@+id/textView16"
         tools:text="Claro" />
@@ -251,6 +267,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
+        android:text="@string/full_time"
         app:layout_constraintStart_toStartOf="@+id/textView13"
         app:layout_constraintTop_toBottomOf="@+id/textView17"
         tools:text="Full Time" />
@@ -260,7 +277,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
+        android:text="@string/publicado_el_10_de_enero"
         app:layout_constraintEnd_toEndOf="@+id/textView13"
+        app:layout_constraintTop_toBottomOf="@+id/iv_Claro_Filter"
         tools:text="Publicado el 10 de enero" />
 
     <ImageView

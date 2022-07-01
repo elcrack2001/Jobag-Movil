@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 import com.upc.pe.jobagapplication.*
 import com.upc.pe.jobagapplication.Model.employeers
 import com.upc.pe.jobagapplication.Service.EmployeerService
@@ -15,22 +16,19 @@ import retrofit2.Response
 
 class LoginActivityEmpleador : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
-        val sharedPreferences = SharedPreferences(this@LoginActivityEmpleador)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login_empleador)
 
-        val etUser = findViewById<EditText>(R.id.et_email_e)
-        val etPassword = findViewById<EditText>(R.id.et_password_e)
         val btLogin = findViewById<Button>(R.id.bt_Login_e)
         val btRegister = findViewById<Button>(R.id.bt_Register_e)
 
         btLogin.setOnClickListener {
             val intent = Intent(this, MainEmpleadorActivity::class.java)
             startActivity(intent)
+            Toast.makeText(this@LoginActivityEmpleador, "Inicio de sesión correcto", Toast.LENGTH_LONG).show()
         }
 
         btRegister.setOnClickListener {
-
             val intent = Intent(this, RegisterActivity::class.java)
             startActivity(intent)
         }

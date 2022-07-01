@@ -21,6 +21,38 @@
             android:parentActivityName=".MainEmpleadorActivity"
             android:exported="false" />
         <activity
+            android:name=".PostulateActivity4"
+            android:parentActivityName=".PostulateActivity4"
+            android:exported="false" />
+        <activity
+            android:name=".PostulateActivity3"
+            android:parentActivityName=".PostulateActivity3"
+            android:exported="false" />
+        <activity
+            android:name=".PostulateActivity2"
+            android:parentActivityName=".PostulateActivity1"
+            android:exported="false" />
+        <activity
+            android:name=".PostulateActivity1"
+            android:parentActivityName=".EmpleoActivity1"
+            android:exported="false" />
+        <activity
+            android:name=".EmpleoActivity2"
+            android:parentActivityName=".FilterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".EmpleoActivity1"
+            android:parentActivityName=".FilterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".FilterActivity"
+            android:parentActivityName=".HomeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CreateAnuncioEmpleador"
+            android:exported="false"
+            android:parentActivityName=".MainEmpleadorActivity" />
+        <activity
             android:name=".SuscripcionEmpleador"
             android:exported="false"
             android:parentActivityName=".MainEmpleadorActivity" />
